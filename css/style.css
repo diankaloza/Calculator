@@ -1,59 +1,115 @@
-header {
-  background: #7db9e8; /* Old browsers */
-  background: -moz-linear-gradient(
-    top,
-    #7db9e8 0%,
-    #207cca 49%,
-    #2989d8 50%,
-    #1e5799 100%
-  ); /* FF3.6-15 */
-  background: -webkit-linear-gradient(
-    top,
-    #7db9e8 0%,
-    #207cca 49%,
-    #2989d8 50%,
-    #1e5799 100%
-  ); /* Chrome10-25,Safari5.1-6 */
-  background: url(../img/pattern.png),
-    linear-gradient(
-      to bottom,
-      #7db9e8 0%,
-      #207cca 49%,
-      #2989d8 50%,
-      #1e5799 100%
-    ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=0 ); /* IE6-9 */
-  padding: 200px 0px;
-  background-size: contain;
+body {
+  height: 100%;
+  max-width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+input,
+button,
+textarea {
+  font-family: inherit;
 }
 
-.itd_play {
-  background-color: #0000cd;
+input::-ms-clear {
+  display: none;
+}
+button {
+  cursor: pointer;
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+a,
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+ul li {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+.calc-screen {
+  max-width: 300px;
+  height: 118px;
+  padding: 10px;
+  position: relative;
+  top: -30px;
+  left: 0px;
+  font-size: 70px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: end;
+}
+.calc {
+  width: 300px;
+  height: 500px;
+  border: 1px solid #000;
+  margin: 50px auto;
+  border-radius: 20px;
+  background-color: #000;
+  color: #fff;
+  font-family: Arial;
+  padding: 20px;
+}
+.buttons {
+  display: grid;
+  grid-template-areas:
+    "ac plusminus percent dilen"
+    "seven eight nine mnoz"
+    "four five six minus"
+    "one two three plus"
+    "zero zero krapka equal";
+  grid-gap: 8px;
+  justify-content: center;
+  justify-items: center;
+}
+.btn {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: #333;
+  font-size: 22px;
+  text-align: center;
+  line-height: 60px;
   cursor: pointer;
-  margin: 30px auto;
-  transition: all 0.2s ease;
+  user-select: none;
 }
-.itd_play:hover {
-  background-color: #9932cc;
+
+.btn:hover {
+  filter: brightness(120%);
 }
-.itd_triangle {
-  width: 0;
-  height: 0;
-  border-top: 15px solid transparent;
-  border-bottom: 15px solid transparent;
-  border-left: 15px solid white;
-  margin-right: -3px;
+
+.btn:active {
+  filter: brightness(50%);
 }
-.btn-jtd {
-  display: block;
-  color: white;
-  margin: 0px auto;
-  padding: 5px 30px;
-  background-color: #7b68ee;
+.btn.zero {
+  grid-area: zero;
+  width: 100%;
+  border-radius: 30px;
+}
+
+.btn.bcg-grey {
+  background-color: #a6a6a6;
+}
+.btn.bg-orange {
+  background-color: #ff9501;
 }
