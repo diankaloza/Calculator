@@ -1,0 +1,59 @@
+header {
+  background: #7db9e8; /* Old browsers */
+  background: -moz-linear-gradient(
+    top,
+    #7db9e8 0%,
+    #207cca 49%,
+    #2989d8 50%,
+    #1e5799 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    top,
+    #7db9e8 0%,
+    #207cca 49%,
+    #2989d8 50%,
+    #1e5799 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: url(../img/pattern.png),
+    linear-gradient(
+      to bottom,
+      #7db9e8 0%,
+      #207cca 49%,
+      #2989d8 50%,
+      #1e5799 100%
+    ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=0 ); /* IE6-9 */
+  padding: 200px 0px;
+  background-size: contain;
+}
+
+.itd_play {
+  background-color: #0000cd;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 30px auto;
+  transition: all 0.2s ease;
+}
+.itd_play:hover {
+  background-color: #9932cc;
+}
+.itd_triangle {
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid white;
+  margin-right: -3px;
+}
+.btn-jtd {
+  display: block;
+  color: white;
+  margin: 0px auto;
+  padding: 5px 30px;
+  background-color: #7b68ee;
+}
