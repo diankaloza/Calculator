@@ -72,10 +72,16 @@ document.querySelector(".buttons").onclick = (event) => {
         break;
 
       case "/":
-        a = a / b;
         // если деление на 0 (выбивает infinity)
-        if (b === "0") out.textContent = "Ошибка";
-        allClear();
+        if (b === "0") {
+          out.textContent = "Ошибка";
+          a = "";
+          b = "";
+          sign = "";
+          return;
+        }
+        a = a / b;
+        break;
     }
     finish = true;
     out.textContent = a;
