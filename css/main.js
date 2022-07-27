@@ -6,9 +6,7 @@ let finish = false;
 const digit = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "."];
 const action = ["х", "-", "/", "%", "+"];
 
-const out = document.querySelector(
-  ".col-12 text-end p-3 bg-primary bg-opacity-25 fs-1 fw-bold"
-);
+const out = document.querySelector(".outer");
 
 function allClear() {
   a = "";
@@ -20,14 +18,15 @@ function allClear() {
 
 document.querySelector(".ac").onclick = allClear;
 
-document.querySelector(".btn").onclick = (event) => {
+document.querySelector(".buttons").onclick = (event) => {
   const btn = event.target;
   if (!btn.classList.contains("btn")) return;
   if (btn.classList.contains("ac")) return;
   out.textContent = "";
 
   // значение которое мы берем из нажатой кнопки
-  const key = btn.textContent;
+  //trim - позволяет убрать пробелы
+  const key = btn.textContent.trim();
 
   if (digit.includes(key)) {
     if (b === "" && sign === "") {
