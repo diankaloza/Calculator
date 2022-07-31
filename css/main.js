@@ -4,9 +4,9 @@ let sign = "";
 let finish = false;
 
 const digit = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "."];
-const action = ["х", "-", "/", "%", "+"];
+const action = ["x", "-", "/", "%", "+", "+/-"];
 
-const out = document.querySelector(".calc-screen p");
+const out = document.querySelector(".outer");
 
 function allClear() {
   a = "";
@@ -19,17 +19,16 @@ function allClear() {
 document.querySelector(".ac").onclick = allClear;
 
 document.querySelector(".buttons").onclick = (event) => {
-  const button = event.target;
-  if (!button.classList.contains("btn")) return;
-  if (button.classList.contains("ac")) return;
-
-  out.textContent = "";
+  const btn = event.target;
+  if (!btn.classList.contains("btn")) return;
+  if (btn.classList.contains("ac")) return;
 
   // значение которое мы берем из нажатой кнопки
-  const key = button.textContent.trim();
+  //trim - позволяет убрать пробелы
+  const key = btn.textContent.trim();
 
-  if (key === "+/-" && a !== "") {
-    console.log("first");
+  if (key == "+/-" && a !== "") {
+    console.log("hello");
     if (a > 0) {
       a = -a;
     } else if (a < 0) {
@@ -38,7 +37,7 @@ document.querySelector(".buttons").onclick = (event) => {
     out.textContent = a;
     return;
   }
-  out.textContent = "";
+  //out.textContent = "";
 
   if (digit.includes(key)) {
     if (b === "" && sign === "") {
@@ -75,7 +74,7 @@ document.querySelector(".buttons").onclick = (event) => {
         a = a - b;
         break;
 
-      case "х":
+      case "x":
         a = a * b;
         break;
 
